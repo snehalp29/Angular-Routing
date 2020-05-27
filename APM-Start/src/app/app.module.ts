@@ -14,15 +14,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ProductModule } from './products/product.module';
 import { UserModule } from './user/user.module';
 import { MessageModule } from './messages/message.module';
-import { RouterModule } from '@angular/router';
-import { ProductListComponent } from './products/product-list.component';
-
-const AppRoutes = [
-  { path: 'welcome', component: WelcomeComponent },
-  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-  { path: 'products', component: ProductListComponent }
-  { path: '**', component: PageNotFoundComponent },
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
@@ -32,7 +24,7 @@ const AppRoutes = [
     ProductModule,
     UserModule,
     MessageModule,
-    RouterModule.forRoot(AppRoutes),
+    AppRoutingModule,
   ],
   declarations: [AppComponent, WelcomeComponent, PageNotFoundComponent],
   bootstrap: [AppComponent],
